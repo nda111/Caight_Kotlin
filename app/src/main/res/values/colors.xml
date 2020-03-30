@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
+    <!-- KNOWN COLORS -->
+    <color name="knownWhite">#FFFFFF</color>
+    <color name="KnownLightGray">#F5F5F5</color>
+    <color name="knownGray">#808080</color>
+    <color name="knownBlack">#000000</color>
+
+    <!-- SPECIFIED COLORS -->
+    <color name="warnRed">#FF0000</color>
+    <color name="infoBlue">#0088FF</color>
+
+    <!-- THEME COLORS -->
+    <color name="colorPrimary">#FFC107</color>
+    <color name="colorPrimaryDark">#6A3F00</color>
+    <color name="colorAccent">#FFC97A</color>
 </resources>

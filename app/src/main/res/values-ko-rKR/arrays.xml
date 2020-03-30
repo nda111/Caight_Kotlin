@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="name_examples">
+        <item>두부</item>
+        <item>호두</item>
+        <item>구름이</item>
+        <item>별이</item>
+        <item>사랑이</item>
+        <item>행복이</item>
+        <item>초롱이</item>
+        <item>깜시</item>
+    </string-array>
+
+    <string-array name="species">
+        <item>믹스</item>
+        <item>아비시니안</item>
+        <item>아메리칸 컬</item>
+        <item>아메리칸 쇼트헤어</item>
+        <item>아메리칸 와이어헤어</item>
+        <item>아메리칸 밥테일 롱헤어</item>
+        <item>아메리칸 밥테일 쇼트헤어</item>
+        <item>아메리칸 컬 롱헤어</item>
+        <item>아리비안 마우</item>
+        <item>오스트렐리안 미스트</item>
+        <item>발리니즈</item>
+        <item>뱅갈</item>
+        <item>벵갈 롱헤어</item>
+        <item>버만</item>
+        <item>봄베이</item>
+        <item>브라질리안 쇼트헤어</item>
+        <item>브리티시 롱헤어</item>
+        <item>브리티시 쇼트헤어</item>
+        <item>버미즈</item>
+        <item>버밀라</item>
+        <item>버밀라 롱헤어</item>
+        <item>셀틱 쇼트헤어</item>
+        <item>실론</item>
+        <item>샤트룩스</item>
+        <item>차이니즈 리 허</item>
+        <item>컬러포인트 쇼트헤어</item>
+        <item>코니시 렉스</item>
+        <item>사이프러스 아프로디테</item>
+        <item>사이프러스 아프로디테 롱헤어</item>
+        <item>데본 렉스</item>
+        <item>돈스코이</item>
+        <item>이집션 마우</item>
+        <item>엑소틱 쇼트헤어</item>
+        <item>저먼 렉스</item>
+        <item>하바나 브라운</item>
+        <item>하이랜더</item>
+        <item>하이랜드 폴드</item>
+        <item>하이랜더 쇼트헤어</item>
+        <item>히말라얀</item>
+        <item>재패니즈 밥테일 롱헤어</item>
+        <item>재패니즈 밥테일 쇼트헤어</item>
+        <item>카렐리안 밥테일 롱헤어</item>
+        <item>카렐리안 밥테일 쇼트헤어</item>
+        <item>카오 매니</item>
+        <item>코렛</item>
+        <item>코리안 쇼트헤어</item>
+        <item>쿠릴리안 밥테일</item>
+        <item>쿠릴리안 밥테일 롱헤어</item>
+        <item>라펌</item>
+        <item>래펌 롱헤어</item>
+        <item>라이코이</item>
+        <item>메인쿤</item>
+        <item>맨덜레이</item>
+        <item>맹크스</item>
+        <item>메콩 밥테일</item>
+        <item>민스킨</item>
+        <item>미뉴엣</item>
+        <item>미뉴엣 롱헤어</item>
+        <item>모스크바 롱 헤어</item>
+        <item>먼치킨</item>
+        <item>먼치킨 롱헤어</item>
+        <item>네바 마스커레이드</item>
+        <item>니벨룽</item>
+        <item>노르웨이숲</item>
+        <item>오시캣</item>
+        <item>오호스 아줄레스 롱헤어</item>
+        <item>오호스 아줄레스 쇼트헤어</item>
+        <item>오리엔탈</item>
+        <item>오리엔탈 롱헤어</item>
+        <item>페르시안</item>
+        <item>피터볼드</item>
+        <item>픽시밥</item>
+        <item>픽시밥 롱헤어</item>
+        <item>라가머핀</item>
+        <item>렉돌</item>
+        <item>러시안 블루</item>
+        <item>사바나캣</item>
+        <item>스코티시 폴드</item>
+        <item>스코티시 스트레이트</item>
+        <item>스코티시 스트레이트 롱헤어</item>
+        <item>셀커크 렉스 롱헤어</item>
+        <item>셀커크 렉스</item>
+        <item>세렝게티</item>
+        <item>스노우슈</item>
+        <item>샴</item>
+        <item>시베리안 포레스트</item>
+        <item>심릭</item>
+        <item>싱가퓨라</item>
+        <item>소코케</item>
+        <item>소말리</item>
+        <item>스핑크스</item>
+        <item>타이</item>
+        <item>티파니</item>
+        <item>통키니즈</item>
+        <item>토이거</item>
+        <item>터키시 앙고라</item>
+        <item>터키시 반</item>
+        <item>우랄 렉스</item>
+        <item>우랄 렉스 롱헤어</item>
+        <item>요크</item>
+    </string-array>
+</resources>

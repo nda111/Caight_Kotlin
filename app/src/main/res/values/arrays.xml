@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="name_examples">
+        <item>Bella</item>
+        <item>Bailey</item>
+        <item>Max</item>
+        <item>Lucy</item>
+        <item>Molly</item>
+        <item>Charlie</item>
+        <item>Daisy</item>
+        <item>Buddy</item>
+    </string-array>
+
+    <string-array name="species">
+        <item>Mix</item>
+        <item>Abyssinian</item>
+        <item>American curl</item>
+        <item>American shorthair</item>
+        <item>American wirehair</item>
+        <item>American Bobtail longhair</item>
+        <item>American Bobtail shorthair</item>
+        <item>American Curl longhair</item>
+        <item>Arabian Mau</item>
+        <item>Australian mist</item>
+        <item>Balinese</item>
+        <item>Bengal</item>
+        <item>Bengal longhair</item>
+        <item>Berman</item>
+        <item>Bombay</item>
+        <item>Brazilian shorthair</item>
+        <item>British longhair</item>
+        <item>British shorthair</item>
+        <item>Burmese</item>
+        <item>Burmilla</item>
+        <item>Burmilla longhair</item>
+        <item>Celtic shorthair</item>
+        <item>Ceylon</item>
+        <item>Chartreux</item>
+        <item>Chinese Li Heo</item>
+        <item>Colorpoint shorthair</item>
+        <item>Cornish Rex</item>
+        <item>Cyprus Aphodite</item>
+        <item>Cyprus Aphodite longhair</item>
+        <item>Devon Rex</item>
+        <item>Donskoy</item>
+        <item>Egyptian Mau</item>
+        <item>Exotic shorthair</item>
+        <item>German Rex</item>
+        <item>Havana Brown</item>
+        <item>Highlander</item>
+        <item>Highlander Fold</item>
+        <item>Highlander shorthair</item>
+        <item>Himalayan</item>
+        <item>Japanese Bobtail longhair</item>
+        <item>Japanese Bobtail shorthair</item>
+        <item>Karelian Bobtail longhair</item>
+        <item>Karelian Bobtail shorthair</item>
+        <item>Khao Manee</item>
+        <item>Korat</item>
+        <item>Korean shorthair</item>
+        <item>Kurilian Bobtail</item>
+        <item>Kurilian Bobtail longhair</item>
+        <item>LaPerm</item>
+        <item>LaPerm longhair</item>
+        <item>Lycoy</item>
+        <item>Maincoon</item>
+        <item>Mandalay</item>
+        <item>Manx</item>
+        <item>Mekong Bobtail</item>
+        <item>Minskin</item>
+        <item>Minuet</item>
+        <item>Minuet longhair</item>
+        <item>Moscow longhair</item>
+        <item>Munchkin</item>
+        <item>Munchkin longhair</item>
+        <item>Neva Masquerade</item>
+        <item>Nibelungen</item>
+        <item>Norwegian forest cat</item>
+        <item>Ocicat</item>
+        <item>Ojos Azules longhair</item>
+        <item>Ojos Azules shorthair</item>
+        <item>Oriental</item>
+        <item>Oriental longhair</item>
+        <item>Perian</item>
+        <item>Peterbold</item>
+        <item>Pixie Bob</item>
+        <item>Pixie Bob longhair</item>
+        <item>Ragamuffin</item>
+        <item>Ragdoll</item>
+        <item>Russian Blue</item>
+        <item>Savana cat</item>
+        <item>Scottish Fold</item>
+        <item>Scottish Straight</item>
+        <item>Scottish Straight longhair</item>
+        <item>Selkirk Rex longhair</item>
+        <item>Selkirk Rex</item>
+        <item>Serengeti</item>
+        <item>Showshoe</item>
+        <item>Siamese</item>
+        <item>Siberian Forest</item>
+        <item>Simrik</item>
+        <item>Singapura</item>
+        <item>Sokoke Cat</item>
+        <item>Somali</item>
+        <item>Spinks</item>
+        <item>Thai</item>
+        <item>Tiffany</item>
+        <item>Tonkinese</item>
+        <item>Toyger</item>
+        <item>Turkish Angora</item>
+        <item>Turkish Van</item>
+        <item>Ural Rex</item>
+        <item>Ural Rex longhair</item>
+        <item>York</item>
+    </string-array>
+</resources>
