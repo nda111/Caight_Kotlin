@@ -10,10 +10,11 @@ import org.json.JSONException
 import org.json.JSONObject
 import java.util.*
 
-internal object StaticResources {
-    const val __WS_ADDRESS__ = "wss://caight.herokuapp.com/ws"
+internal object StaticResources
+{
 
-    internal object AutoLogin {
+    internal object AutoLogin
+    {
         private var preferences: SharedPreferences? = null
 
         private const val KeyPreferences = "__KEY_PREFERENCE_AUTO_LOGIN__"
@@ -21,8 +22,10 @@ internal object StaticResources {
         private const val KeyEmail = "__KEY_EMAIL__"
         private const val KeyPassword = "__KEY_PASSWORD__"
 
-        private fun getPreferencesIfNull(context: Context) {
-            if (preferences == null) {
+        private fun getPreferencesIfNull(context: Context)
+        {
+            if (preferences == null)
+            {
                 preferences = context.getSharedPreferences(
                     KeyPreferences,
                     Context.MODE_PRIVATE
@@ -30,82 +33,95 @@ internal object StaticResources {
             }
         }
 
-        fun clear(context: Context) {
+        fun clear(context: Context)
+        {
             getPreferencesIfNull(context)
             preferences!!.edit().clear().apply()
         }
 
-        operator fun set(
-            context: Context,
-            doAutoLogin: Boolean,
-            email: String?,
-            password: String?
-        ) {
-            var email = email
-            var password = password
+        fun set(context: Context, doAutoLogin: Boolean, email: String?, password: String?)
+        {
             getPreferencesIfNull(context)
-            if (!doAutoLogin) {
-                password = null
-                email = password
+            if (doAutoLogin)
+            {
+                preferences!!.edit()
+                    .putBoolean(KeyDoAutoLogin, doAutoLogin)
+                    .putString(KeyEmail, email)
+                    .putString(KeyPassword, password)
+                    .apply()
             }
-            preferences!!.edit()
-                .putBoolean(KeyDoAutoLogin, doAutoLogin)
-                .putString(KeyEmail, email)
-                .putString(KeyPassword, password)
-                .apply()
+            else
+            {
+                preferences!!.edit()
+                    .putBoolean(KeyDoAutoLogin, doAutoLogin)
+                    .remove(KeyEmail)
+                    .remove(KeyPassword)
+                    .apply()
+            }
         }
 
-        fun getDoAutoLogin(context: Context): Boolean {
+        fun getDoAutoLogin(context: Context): Boolean
+        {
             getPreferencesIfNull(context)
             return preferences!!.getBoolean(KeyDoAutoLogin, false)
         }
 
-        fun getEmail(context: Context): String? {
+        fun getEmail(context: Context): String?
+        {
             getPreferencesIfNull(context)
             return preferences!!.getString(KeyEmail, null)
         }
 
-        fun getPassword(context: Context): String? {
+        fun getPassword(context: Context): String?
+        {
             getPreferencesIfNull(context)
             return preferences!!.getString(KeyPassword, null)
         }
     }
 
-    internal object StringArrays {
+    internal object StringArrays
+    {
         private var preferences: SharedPreferences? = null
         private const val KeyPreferences = "__KEY_PREFERENCES_STRING_ARRAYS__"
         private const val KeyNameExamples = "__KEY_NAME_EXAMPLES__"
         private const val KeySpecies = "__KEY_SPECIES__"
         private const val KeySortedSpecies = "__KEY_SPECIES_SORTED__"
 
-        private fun getPreferencesIfNull(context: Context) {
-            if (preferences == null) {
+        private fun getPreferencesIfNull(context: Context)
+        {
+            if (preferences == null)
+            {
                 preferences = context.getSharedPreferences(KeyPreferences, Context.MODE_PRIVATE)
             }
         }
 
-        fun initializeIfNotExists(context: Context) {
+        fun initializeIfNotExists(context: Context)
+        {
             getPreferencesIfNull(context)
 
             val resources = context.resources
 
-            if (!preferences!!.contains(KeyNameExamples)) {
+            if (!preferences!!.contains(KeyNameExamples))
+            {
                 val names = resources.getStringArray(R.array.name_examples)
                 setNameExamples(context, names)
             }
 
-            if (!preferences!!.contains(KeySpecies) || !preferences!!.contains(KeySortedSpecies)) {
+            if (!preferences!!.contains(KeySpecies) || !preferences!!.contains(KeySortedSpecies))
+            {
                 val species = resources.getStringArray(R.array.species)
                 setSpecies(context, species)
             }
         }
 
-        fun getNameExamples(context: Context): Array<String> {
+        fun getNameExamples(context: Context): Array<String>
+        {
             getPreferencesIfNull(context)
             return preferences!!.getString(KeyNameExamples, "")!!.split("\u0000").toTypedArray()
         }
 
-        fun setNameExamples(context: Context, examples: Array<String>) {
+        fun setNameExamples(context: Context, examples: Array<String>)
+        {
             getPreferencesIfNull(context)
 
             preferences!!.edit()
@@ -113,17 +129,20 @@ internal object StaticResources {
                 .apply()
         }
 
-        fun getSpecies(context: Context): Array<String> {
+        fun getSpecies(context: Context): Array<String>
+        {
             getPreferencesIfNull(context)
             return preferences!!.getString(KeySpecies, "")!!.split("\u0000").toTypedArray()
         }
 
-        fun getSortedSpecies(context: Context): Array<String> {
+        fun getSortedSpecies(context: Context): Array<String>
+        {
             getPreferencesIfNull(context)
             return preferences!!.getString(KeySortedSpecies, "")!!.split("\u0000").toTypedArray()
         }
 
-        fun setSpecies(context: Context, species: Array<String>) {
+        fun setSpecies(context: Context, species: Array<String>)
+        {
             getPreferencesIfNull(context)
             val sortedSpecies = species.copyOf()
             sortedSpecies.sort()
@@ -131,10 +150,12 @@ internal object StaticResources {
             preferences!!.edit()
                 .putString(KeySpecies, species.joinToString("\u0000"))
                 .putString(KeySortedSpecies, sortedSpecies.joinToString("\u0000"))
+                .apply()
         }
     }
 
-    internal object Account {
+    internal object Account
+    {
         private var preferences: SharedPreferences? = null
 
         private const val KeyPreferences = "__KEY_PREFERENCES_ACCOUNT__"
@@ -143,8 +164,10 @@ internal object StaticResources {
         private const val KeyId = "__KEY_ID__"
         private const val KeyAuthenticationToken = "__KEY_AUTHENTICATION_TOKEN__"
 
-        private fun getPreferencesIfNull(context: Context) {
-            if (preferences == null) {
+        private fun getPreferencesIfNull(context: Context)
+        {
+            if (preferences == null)
+            {
                 preferences = context.getSharedPreferences(
                     KeyPreferences,
                     Context.MODE_PRIVATE
@@ -152,42 +175,48 @@ internal object StaticResources {
             }
         }
 
-        fun clear(context: Context) {
+        fun clear(context: Context)
+        {
             getPreferencesIfNull(context)
             preferences!!.edit().clear().apply()
         }
 
-        fun getEmail(context: Context): String? {
+        fun getEmail(context: Context): String
+        {
             getPreferencesIfNull(context)
             return preferences!!.getString(
                 KeyEmail,
                 ""
-            )
+            )!!
         }
 
-        fun setEmail(context: Context, email: String?) {
+        fun setEmail(context: Context, email: String?)
+        {
             getPreferencesIfNull(context)
             preferences!!.edit()
                 .putString(KeyEmail, email).apply()
         }
 
-        fun getName(context: Context): String? {
+        fun getName(context: Context): String
+        {
             getPreferencesIfNull(context)
             return preferences!!.getString(
                 KeyName,
                 ""
-            )
+            )!!
         }
 
-        fun setName(context: Context, name: String?) {
+        fun setName(context: Context, name: String?)
+        {
             getPreferencesIfNull(context)
             preferences!!.edit()
                 .putString(KeyName, name).apply()
         }
 
-        fun getId(context: Context): ByteArray {
+        fun getId(context: Context): ByteArray
+        {
             getPreferencesIfNull(context)
-            return Methods.longToByteArray(
+            return Methods.NumericBinary.longToByteArray(
                 preferences!!.getLong(
                     KeyId,
                     -1
@@ -195,31 +224,35 @@ internal object StaticResources {
             )
         }
 
-        fun setId(context: Context, id: ByteArray?) {
+        fun setId(context: Context, id: ByteArray?)
+        {
             getPreferencesIfNull(context)
             preferences!!.edit()
-                .putLong(KeyId, Methods.byteArrayToLong(id!!).toLong()).apply()
+                .putLong(KeyId, Methods.NumericBinary.byteArrayToLong(id!!).toLong()).apply()
         }
 
-        fun getAuthenticationToken(context: Context): String? {
+        fun getAuthenticationToken(context: Context): String
+        {
             getPreferencesIfNull(context)
             return preferences!!.getString(
                 KeyAuthenticationToken,
                 ""
-            )
+            )!!
         }
 
         fun setAuthenticationToken(
             context: Context,
             token: String?
-        ) {
+        )
+        {
             getPreferencesIfNull(context)
             preferences!!.edit()
                 .putString(KeyAuthenticationToken, token).apply()
         }
     }
 
-    internal object Entity {
+    internal object Entity
+    {
         private var preferences: SharedPreferences? = null
 
         private const val KeyPreferences = "__KEY_PREFERENCES_ENTITY__"
@@ -232,8 +265,10 @@ internal object StaticResources {
         private var entries: HashMap<CatGroup, List<Cat>>? = null
         private var updateList: Boolean? = null
 
-        private fun getPreferencesIfNull(context: Context) {
-            if (preferences == null) {
+        private fun getPreferencesIfNull(context: Context)
+        {
+            if (preferences == null)
+            {
                 preferences = context.getSharedPreferences(
                     KeyPreferences,
                     Context.MODE_PRIVATE
@@ -241,7 +276,8 @@ internal object StaticResources {
             }
         }
 
-        fun loadEntries(context: Context) {
+        fun loadEntries(context: Context)
+        {
             getPreferencesIfNull(context)
             groups = ArrayList<CatGroup>()
             entries =
@@ -250,63 +286,82 @@ internal object StaticResources {
                 KeyEntries,
                 "[]"
             )
-            try {
+            try
+            {
                 val array = JSONArray(jsonString)
-                for (i in 0 until array.length()) {
+                for (i in 0 until array.length())
+                {
                     val entry = array[i] as JSONObject
                     val group: CatGroup = CatGroup.parseJson(entry[JsonKeyGroup] as JSONObject)!!
                     val catsJson = entry[JsonKeyCats] as JSONArray
                     val cats: ArrayList<Cat> = ArrayList<Cat>(catsJson.length())
-                    for (j in 0 until catsJson.length()) {
+                    for (j in 0 until catsJson.length())
+                    {
                         val cat: Cat = Cat.parseJson(catsJson[i] as JSONObject)!!
                         cats.add(cat)
                     }
                     groups!!.add(group)
                     entries!![group] = cats
                 }
-            } catch (e: JSONException) {
+            }
+            catch (e: JSONException)
+            {
                 e.printStackTrace()
             }
         }
 
-        fun clear(context: Context) {
+        fun clear(context: Context)
+        {
             getPreferencesIfNull(context)
             preferences!!.edit().clear().apply()
         }
 
-        fun getGroups(context: Context): ArrayList<CatGroup>? {
-            if (groups == null) {
+        fun getGroups(context: Context): ArrayList<CatGroup>
+        {
+            if (groups == null)
+            {
                 loadEntries(context)
-            } else {
+            }
+            else
+            {
                 getPreferencesIfNull(context)
             }
-            return groups
+            return groups!!
         }
 
-        fun getEntries(context: Context): HashMap<CatGroup, List<Cat>>? {
-            if (entries == null) {
+        fun getEntries(context: Context): HashMap<CatGroup, List<Cat>>
+        {
+            if (entries == null)
+            {
                 loadEntries(context)
-            } else {
+            }
+            else
+            {
                 getPreferencesIfNull(context)
             }
-            return entries
+            return entries!!
         }
 
         fun setEntries(
             context: Context,
             groups: ArrayList<CatGroup>,
             entries: HashMap<CatGroup, List<Cat>>
-        ) {
+        )
+        {
             getPreferencesIfNull(context)
-            try {
+            try
+            {
                 val array = JSONArray()
-                for (group in groups) {
+                for (group in groups)
+                {
                     val cats: List<Cat>? = entries[group]
                     val entry = JSONObject()
                     entry.put(JsonKeyGroup, group.toJsonObject())
                     val catArray = JSONArray()
-                    if (cats != null) {
-                        for (cat in cats) {
+                    if (cats != null)
+                    {
+                        for (cat in cats)
+                        {
                             catArray.put(cat.toJsonObject())
                         }
                     }
@@ -316,13 +371,17 @@ internal object StaticResources {
                     .putString(KeyEntries, array.toString()).apply()
                 Entity.groups = groups
                 Entity.entries = entries
-            } catch (e: JSONException) {
+            }
+            catch (e: JSONException)
+            {
                 e.printStackTrace()
             }
         }
 
-        fun getUpdateList(context: Context): Boolean {
-            if (updateList == null) {
+        fun getUpdateList(context: Context): Boolean
+        {
+            if (updateList == null)
+            {
                 getPreferencesIfNull(context)
                 updateList = preferences!!.getBoolean(
                     KeyUpdateList,
@@ -335,7 +394,8 @@ internal object StaticResources {
         fun setUpdateList(
             context: Context,
             updateList: Boolean
-        ) {
+        )
+        {
             getPreferencesIfNull(context)
             Entity.updateList = updateList
             preferences!!.edit()

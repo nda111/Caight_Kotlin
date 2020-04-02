@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="sdItemAddCat" type="id" />
+    <item name="sdItemAddGroup" type="id" />
+    <item name="sdItemAccount" type="id" />
+</resources>

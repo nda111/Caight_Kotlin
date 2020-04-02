@@ -7,7 +7,7 @@ class CatGroup {
     var id: Int = -1
     var name: String = ""
     var owner: String = ""
-    var locked: Boolean = false
+    var isLocked: Boolean = false
         private set
 
     fun toJsonObject(): JSONObject? {
@@ -16,7 +16,7 @@ class CatGroup {
             json.put(__JSON_KEY_GROUP_ID__, id)
             json.put(__JSON_KEY_GROUP_NAME__, name)
             json.put(__JSON_KEY_GROUP_OWNER__, owner)
-            json.put(__JSON_KEY_GROUP_LOCKED__, locked)
+            json.put(__JSON_KEY_GROUP_LOCKED__, isLocked)
             json
         } catch (e: JSONException) {
             e.printStackTrace()
@@ -25,11 +25,11 @@ class CatGroup {
     }
 
     fun lock() {
-        locked = true
+        isLocked = true
     }
 
     fun unlock() {
-        locked = false
+        isLocked = false
     }
 
     companion object {
@@ -44,7 +44,7 @@ class CatGroup {
                 group.id = json.getInt(__JSON_KEY_GROUP_ID__)
                 group.name = json.getString(__JSON_KEY_GROUP_NAME__)
                 group.owner = json.getString(__JSON_KEY_GROUP_OWNER__)
-                group.locked = json.getBoolean(__JSON_KEY_GROUP_LOCKED__)
+                group.isLocked = json.getBoolean(__JSON_KEY_GROUP_LOCKED__)
                 group
             } catch (e: JSONException) {
                 e.printStackTrace()

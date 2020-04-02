@@ -1,0 +1,101 @@
+<animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:tools="http://schemas.android.com/tools">
+    <aapt:attr name="android:drawable">
+        <vector xmlns:android="http://schemas.android.com/apk/res/android"
+            android:width="66dp"
+            android:height="66dp"
+            android:viewportWidth="66"
+            android:viewportHeight="66">
+            <path
+                android:name="circle"
+                android:strokeWidth="1"
+                android:pathData="M33,33m-32.5,0a32.5,32.5 0,1 1,65 0a32.5,32.5 0,1 1,-65 0"
+                android:fillColor="#fff"
+                android:strokeColor="#000"/>
+            <path
+                android:name="l2r"
+                android:strokeWidth="1"
+                android:pathData="M23.1,23.1l9.9,9.9 9.9,9.9"
+                android:fillColor="#00000000"
+                android:strokeColor="#000"
+                android:strokeLineCap="round"/>
+            <path
+                android:name="r2l"
+                android:strokeWidth="1"
+                android:pathData="M42.9,23.1l-9.9,9.9 -9.9,9.9"
+                android:fillColor="#00000000"
+                android:strokeColor="#000"
+                android:strokeLineCap="round"/>
+        </vector>
+    </aapt:attr>
+
+    <target android:name="circle">
+        <aapt:attr name="android:animation">
+            <set xmlns:android="http://schemas.android.com/apk/res/android">
+                <objectAnimator
+                    android:duration="300"
+                    android:interpolator="@android:interpolator/fast_out_slow_in"
+                    android:propertyName="fillColor"
+                    android:valueFrom="#fff"
+                    android:valueTo="#000"/>
+            </set>
+        </aapt:attr>
+    </target>
+
+    <target android:name="l2r">
+        <aapt:attr name="android:animation">
+            <set xmlns:android="http://schemas.android.com/apk/res/android">
+                <objectAnimator
+                    android:duration="300"
+                    android:interpolator="@android:interpolator/fast_out_slow_in"
+                    android:propertyName="pathData"
+                    android:valueFrom="M23.1,23.1l9.9,9.9 9.9,9.9"
+                    android:valueTo="M20.43,33.24l11.11,8.27 14.03,-17.02"
+                    android:valueType="pathType" />
+
+                <objectAnimator
+                    android:duration="300"
+                    android:interpolator="@android:interpolator/fast_out_slow_in"
+                    android:propertyName="strokeWidth"
+                    android:valueFrom="1"
+                    android:valueTo="2" />
+
+                <objectAnimator
+                    android:duration="300"
+                    android:interpolator="@android:interpolator/fast_out_slow_in"
+                    android:propertyName="strokeColor"
+                    android:valueFrom="#000"
+                    android:valueTo="#fff" />
+            </set>
+        </aapt:attr>
+    </target>
+
+    <target android:name="r2l">
+        <aapt:attr name="android:animation">
+            <set xmlns:android="http://schemas.android.com/apk/res/android">
+                <objectAnimator
+                    android:duration="300"
+                    android:interpolator="@android:interpolator/fast_out_slow_in"
+                    android:propertyName="pathData"
+                    android:valueFrom="M42.9,23.1l-9.9,9.9 -9.9,9.9"
+                    android:valueTo="M20.43,33.24l11.11,8.27 14.03,-17.02"
+                    android:valueType="pathType" />
+
+                <objectAnimator
+                    android:duration="300"
+                    android:interpolator="@android:interpolator/fast_out_slow_in"
+                    android:propertyName="strokeWidth"
+                    android:valueFrom="1"
+                    android:valueTo="2" />
+
+                <objectAnimator
+                    android:duration="300"
+                    android:interpolator="@android:interpolator/fast_out_slow_in"
+                    android:propertyName="strokeColor"
+                    android:valueFrom="#000"
+                    android:valueTo="#fff" />
+            </set>
+        </aapt:attr>
+    </target>
+</animated-vector>

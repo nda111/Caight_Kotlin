@@ -27,7 +27,7 @@ enum class ResponseId(val id: Int) {
      */
     SIGN_IN_OK(7),
     SIGN_IN_WRONG_PW(8),
-    SING_IN_ERROR(9),
+    SIGN_IN_ERROR(9),
 
     /*
      * NEW_GROUP(4)

@@ -1,3 +1,119 @@
 <resources>
     <string name="app_name">Caight</string>
+
+    <string name="title_sign_up">Sign Up</string>
+    <string name="title_settings">Settings</string>
+    <string name="title_del_account">Delete Account</string>
+    <string name="title_overwriting">Overwriting</string>
+
+    <string name="menu_account">Account</string>
+    <string name="menu_account_logout">Logout</string>
+    <string name="menu_account_reset_pw">Reset password</string>
+    <string name="menu_account_delete_account">Delete this account</string>
+    <string name="menu_notifications">Notifications</string>
+    <string name="menu_create_group">New group</string>
+    <string name="menu_join_group">Join group</string>
+
+    <string name="pw_const_lowercase">Lower case</string>
+    <string name="pw_const_uppercase">Upper case</string>
+    <string name="pw_const_digit">Digit</string>
+    <string name="pw_const_special">Special character</string>
+    <string name="pw_const_length">Minimum 8 letters</string>
+
+    <string name="name_constraint_number">Letters between 2 and 15 are required.</string>
+
+    <string name="attr_group">Group</string>
+    <string name="attr_color">Color</string>
+    <string name="attr_name">Name</string>
+    <string name="attr_birthday">Birthday</string>
+    <string name="attr_gender">Gender</string>
+    <string name="attr_gender_male">Male</string>
+    <string name="attr_gender_female">Female</string>
+    <string name="attr_species">Species</string>
+    <string name="attr_weight">Weight</string>
+    <string name="attr_is_neutered">Neutered or Spayed</string>
+    <string name="attr_keywords">Keywords</string>
+    <string name="attr_email" translatable="false">Email</string>
+    <string name="attr_password">Password</string>
+    <string name="attr_auto_login">Keep logged in</string>
+    <string name="attr_nickname">Nickname</string>
+    <string name="attr_description">Description</string>
+    <string name="attr_id" translatable="false">ID</string>
+    <string name="attr_new_password">New password</string>
+    <string name="attr_lock_group">Lock group</string>
+    <string name="attr_owner">Manager: </string>
+
+    <string name="word_warning">Warning</string>
+    <string name="word_delete_account">Delete Account</string>
+    <string name="word_action" translatable="false">Action</string>
+    <string name="word_delete">Delete</string>
+    <string name="word_neutered">Neutered</string>
+    <string name="word_spayed">Spayed</string>
+
+    <string name="desc_account">.</string>
+    <string name="desc_account_logout">.</string>
+    <string name="desc_account_reset_pw">.</string>
+    <string name="desc_account_delete_account">.</string>
+    <string name="desc_notifications">.</string>
+    <string name="desc_create_group">Create a new group as a manager.</string>
+    <string name="desc_join_group">Join an existing group as a member.</string>
+    <string name="desc_keyword">You can memo your cat\'s charming points!&#10;Separate them with white spaces.</string>
+
+    <string name="unit_kg" translatable="false">(Kg)</string>
+    <string name="unit_kg_no_parenthesis" translatable="false">Kg</string>
+    <string name="unit_old_month">&#32;Months</string>
+    <string name="unit_old_year">&#32;Years</string>
+
+    <string name="act_add_cat">Add cat</string>
+    <string name="act_add_group">Add group</string>
+    <string name="act_register">Register</string>
+    <string name="act_cancel">Cancel</string>
+    <string name="act_settings">Settings</string>
+    <string name="act_back_home">Back to home</string>
+    <string name="act_create_group">Create</string>
+    <string name="act_join_group">Join</string>
+    <string name="act_del_group">Delete this group</string>
+    <string name="act_save">Save</string>
+    <string name="act_overwrite">Overwrite</string>
+    <string name="act_confirm">Confirm</string>
+    <string name="act_select">Select</string>
+
+    <string name="c_bracket_open" translatable="false">(</string>
+    <string name="c_bracket_close" translatable="false">)</string>
+
+    <string name="msg_welcome">Welcome!</string>
+    <string name="msg_register">We sent you an verification email.</string>
+    <string name="msg_list_updated">The list has been updated.</string>
+    <string name="msg_forgot_password">Did you forget your password?</string>
+    <string name="msg_reset_mail_sent">We sent you an email to reset password. &#10; please check spam mails if you can\'t see the email.</string>
+    <string name="msg_del_account">If you write the email address you want to delete and press the \'Delete Account\' button, your account will be deleted.</string>
+    <string name="msg_deleted">Account has been deleted.</string>
+    <string name="msg_fill_form">Pleases fill the form up.</string>
+    <string name="msg_group_deleted">Group has deleted successfully.</string>
+    <string name="msg_only_manager">Only manager can do this.</string>
+    <string name="msg_manager_cannot">Manager can not do this.</string>
+    <string name="msg_confirm_del1">Enter</string>
+    <string name="msg_confirm_del2">to confirm deletion.</string>
+    <string name="msg_upload_complete">Uploaded successfully.</string>
+
+    <string name="warn_deletion">Once you delete, you can\'t revert it.</string>
+    <string name="warn_overwriting">There\'s already entered weight on that day. &#10;Do you want to update?</string>
+
+    <string name="err_occurred">Error occurred. &#10; Please try again.</string>
+    <string name="err_cert_first">Certify your email first.</string>
+    <string name="err_not_email">Invalid email format.</string>
+    <string name="err_no_group">Join group to add a cat.</string>
+    <string name="err_wrong_pw">Password not matches.</string>
+    <string name="err_enter_pw">Please enter your password.</string>
+    <string name="err_other_device_logged_in">Your account logged in on other device.</string>
+    <string name="err_enter_email">Enter your email to delete your account.</string>
+    <string name="err_hand_over_group">You must hand over every groups you own.</string>
+    <string name="err_join_joined">You\'ve already joined this group.</string>
+    <string name="err_join_not_exists">There is no such group.</string>
+    <string name="err_join_rejected">This is locked group. You can\'t join this group.</string>
+    <string name="err_join_wrong_password">This is wrong password.</string>
+    <string name="err_del_group">Group with multiple members cat not be deleted.</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

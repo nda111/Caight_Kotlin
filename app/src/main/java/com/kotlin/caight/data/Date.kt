@@ -2,7 +2,7 @@ package com.kotlin.caight.data
 
 import android.icu.util.Calendar
 
-class Date(val year: Int, val month: Short, val day: Short) : Comparable<Date> {
+class Date(var year: Int, var month: Short, var day: Short) : Comparable<Date> {
     fun toLong(): Long {
         val year = year.toLong()
         val month = month.toLong()
@@ -10,16 +10,16 @@ class Date(val year: Int, val month: Short, val day: Short) : Comparable<Date> {
         return year shl 32 or (month shl 16) or day
     }
 
-    fun toCalendar(): Calendar? {
+    fun toCalendar(): Calendar {
         val calendar = Calendar.getInstance()
         calendar[year, month.toInt(), day.toInt(), 0, 0] = 0
         return calendar
     }
 
-    override fun equals(obj: Any?): Boolean {
-        if (obj is Date) {
-            val other: Date = obj
-            return year == other.year && month == other.month && day == other.day
+    override fun equals(other: Any?): Boolean {
+        if (other is Date) {
+            val dOther: Date = other
+            return year == dOther.year && month == dOther.month && day == dOther.day
         }
         return false
     }
@@ -29,6 +29,8 @@ class Date(val year: Int, val month: Short, val day: Short) : Comparable<Date> {
     }
 
     companion object {
+        val zeroDate: Date = Date(0, 0, 0)
+
         fun fromBigInt(date: Long): Date {
             val year = (date shr 32).toInt()
             val month = (date shr 16 and 0xFFFF).toShort()
