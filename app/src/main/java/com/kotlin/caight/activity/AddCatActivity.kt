@@ -254,7 +254,7 @@ class AddCatActivity : AppCompatActivity(), IMutableActivity, ColorPickerDialogL
                             enableActivity()
                         }
                     }
-                }).connect()
+                }).connect { Toast.makeText(this, R.string.msg_no_connection, Toast.LENGTH_LONG).show() }
             }
         }
     }

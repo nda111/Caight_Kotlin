@@ -159,7 +159,7 @@ class RegisterActivity : AppCompatActivity(), IMutableActivity
 
                         runOnUiThread { enableActivity() }
                     }
-                }).connect()
+                }).connect { Toast.makeText(this, R.string.msg_no_connection, Toast.LENGTH_LONG).show() }
             }
             false
         }

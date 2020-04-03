@@ -123,7 +123,7 @@ class AddGroupActivity : AppCompatActivity(), IMutableActivity
                     finish()
                 }
             }
-        }).connect()
+        }).connect { Toast.makeText(this, R.string.msg_no_connection, Toast.LENGTH_LONG).show() }
     }
 
     private fun joinGroup(args: Array<kotlin.String>)
@@ -179,7 +179,7 @@ class AddGroupActivity : AppCompatActivity(), IMutableActivity
                 }
                 runOnUiThread { enableActivity() }
             }
-        }).connect()
+        }).connect { Toast.makeText(this, R.string.msg_no_connection, Toast.LENGTH_LONG).show() }
     }
 
     override fun enableActivity()

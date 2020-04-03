@@ -1,6 +1,8 @@
 package com.kotlin.caight.activity
 
 import android.content.Intent
+import android.net.ConnectivityManager
+import android.net.Network
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -9,6 +11,7 @@ import com.kotlin.caight.companion.Constants
 import com.kotlin.caight.companion.Methods
 import com.kotlin.caight.companion.StaticResources
 import com.kotlin.caight.delegate.ResponseListener
+import com.kotlin.caight.websocket.NetworkMonitor
 import com.kotlin.caight.websocket.ResponseId
 import com.kotlin.caight.websocket.WebSocketRequest
 import java.util.*
@@ -25,6 +28,23 @@ class RootActivity : AppCompatActivity()
          * Action Bar
          */
         supportActionBar!!.hide()
+
+        /*
+         * Network Monitor
+         */
+        NetworkMonitor.initialize(applicationContext)
+        NetworkMonitor.callback = object : ConnectivityManager.NetworkCallback()
+        {
+            override fun onAvailable(network: Network)
+            {
+                Toast.makeText(this@RootActivity, R.string.msg_back_online, Toast.LENGTH_LONG).show()
+            }
+
+            override fun onLost(network: Network)
+            {
+                Toast.makeText(this@RootActivity, R.string.msg_no_connection, Toast.LENGTH_LONG).show()
+            }
+        }
 
         /*
          * Initialize String Resources

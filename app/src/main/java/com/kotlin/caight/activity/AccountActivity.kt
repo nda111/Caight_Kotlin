@@ -3,9 +3,7 @@ package com.kotlin.caight.activity
 import android.content.Intent
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import android.view.KeyEvent
 import android.view.View
-import android.view.View.OnTouchListener
 import android.view.inputmethod.EditorInfo
 import android.widget.ImageView
 import android.widget.TextView
@@ -103,7 +101,7 @@ class AccountActivity : AppCompatActivity(), IMutableActivity
                                 enableActivity()
                             }
                         }
-                    }).connect()
+                    }).connect { Toast.makeText(this, R.string.msg_no_connection, Toast.LENGTH_LONG).show() }
                 }
                 else
                 {
@@ -158,7 +156,7 @@ class AccountActivity : AppCompatActivity(), IMutableActivity
                         }
                     }
                 }
-            }).connect()
+            }).connect { Toast.makeText(this, R.string.msg_no_connection, Toast.LENGTH_LONG).show() }
         }
 
         // resetPwItem
@@ -204,7 +202,7 @@ class AccountActivity : AppCompatActivity(), IMutableActivity
                         enableActivity()
                     }
                 }
-            }).connect()
+            }).connect { Toast.makeText(this, R.string.msg_no_connection, Toast.LENGTH_LONG).show() }
         }
 
         // delAccountItem

@@ -130,7 +130,7 @@ class EditGroupActivity : AppCompatActivity(), IMutableActivity
                     }
                 }
             }
-        }).connect()
+        }).connect { Toast.makeText(this, R.string.msg_no_connection, Toast.LENGTH_LONG).show() }
 
         // deleteButton
         deleteButton.setOnClickListener {
@@ -182,7 +182,7 @@ class EditGroupActivity : AppCompatActivity(), IMutableActivity
                                 enableActivity()
                             }
                         }
-                    }).connect()
+                    }).connect { Toast.makeText(this@EditGroupActivity, R.string.msg_no_connection, Toast.LENGTH_LONG).show() }
                 }
 
                 override fun onCancel()
@@ -263,7 +263,7 @@ class EditGroupActivity : AppCompatActivity(), IMutableActivity
                             enableActivity()
                         }
                     }
-                }).connect()
+                }).connect { Toast.makeText(this, R.string.msg_no_connection, Toast.LENGTH_LONG).show() }
             }
             else
             {

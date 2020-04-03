@@ -8,6 +8,7 @@ import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.view.inputmethod.EditorInfo
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.kotlin.caight.R
 import com.kotlin.caight.companion.Constants
@@ -117,7 +118,7 @@ class LoginEntryActivity : AppCompatActivity(), IMutableActivity
 
                 runOnUiThread { enableActivity() }
             }
-        }).connect()
+        }).connect { Toast.makeText(this, R.string.msg_no_connection, Toast.LENGTH_LONG).show() }
     }
 
     override fun enableActivity()

@@ -2,6 +2,8 @@ package com.kotlin.caight.companion
 
 import android.content.Context
 import android.graphics.Color
+import android.widget.Toast
+import com.kotlin.caight.R
 import com.kotlin.caight.data.Date
 import com.kotlin.caight.delegate.ResponseListener
 import com.kotlin.caight.websocket.RequestId
@@ -174,7 +176,7 @@ object Methods
                 {
                     action.finally(response, args)
                 }
-            }).connect()
+            }).connect { Toast.makeText(context, R.string.msg_no_connection, Toast.LENGTH_LONG).show() }
         }
     }
 }

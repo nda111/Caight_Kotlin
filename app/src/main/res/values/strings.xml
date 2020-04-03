@@ -95,6 +95,8 @@
     <string name="msg_confirm_del1">Enter</string>
     <string name="msg_confirm_del2">to confirm deletion.</string>
     <string name="msg_upload_complete">Uploaded successfully.</string>
+    <string name="msg_no_connection">No connection</string>
+    <string name="msg_back_online">Back online</string>
 
     <string name="warn_deletion">Once you delete, you can\'t revert it.</string>
     <string name="warn_overwriting">There\'s already entered weight on that day. &#10;Do you want to update?</string>

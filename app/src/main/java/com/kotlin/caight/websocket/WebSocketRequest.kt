@@ -97,9 +97,16 @@ class WebSocketRequest(uri: String, var customAdapter: RequestAdapter? = null) {
         })
     }
 
-    fun connect(): WebSocketRequest {
-        thread = Executors.newSingleThreadExecutor()
-        webSocket!!.connect(thread)
+    fun connect(onFailed: (() -> Unit)?): WebSocketRequest {
+        if (NetworkMonitor.isConnected)
+        {
+            thread = Executors.newSingleThreadExecutor()
+            webSocket!!.connect(thread)
+        }
+        else
+        {
+            onFailed?.invoke()
+        }
         return this
     }
 

@@ -284,7 +284,7 @@ class EditCatActivity : AppCompatActivity(), IMutableActivity, ColorPickerDialog
                             disableActivity()
                         }
                     }
-                }).connect()
+                }).connect { Toast.makeText(this, R.string.msg_no_connection, Toast.LENGTH_LONG).show() }
             }
             else
             {

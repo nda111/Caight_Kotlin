@@ -2,6 +2,8 @@ package com.kotlin.caight.activity
 
 import android.content.Context
 import android.content.Intent
+import android.net.ConnectivityManager
+import android.net.Network
 import android.os.Bundle
 import android.view.MotionEvent
 import android.view.View
@@ -18,6 +20,7 @@ import com.kotlin.caight.dialog.DeletionConfirmDialog
 import com.kotlin.caight.view.CatGroupView
 import com.kotlin.caight.view.CatView
 import com.kotlin.caight.view.EntityViewBase
+import com.kotlin.caight.websocket.NetworkMonitor
 import com.kotlin.caight.websocket.RequestId
 import com.kotlin.caight.websocket.ResponseId
 import com.kotlin.caight.websocket.WebSocketRequest
@@ -87,7 +90,7 @@ class MainActivity : AppCompatActivity()
                             progressBar.visibility = View.GONE
                         }
                     }
-                }).connect()
+                }).connect { Toast.makeText(this@MainActivity, R.string.msg_no_connection, Toast.LENGTH_LONG).show() }
             }
             else
             {
@@ -182,7 +185,7 @@ class MainActivity : AppCompatActivity()
                                     progressBar.visibility = View.GONE
                                 }
                             }
-                        }).connect()
+                        }).connect { Toast.makeText(this@MainActivity, R.string.msg_no_connection, Toast.LENGTH_LONG).show() }
                     }
 
                     override fun onCancel()
@@ -196,7 +199,7 @@ class MainActivity : AppCompatActivity()
             }
         }
     }
-    
+
     private val onCatEditListener: EntityViewBase.OnEntityListItemTouchListener = object : EntityViewBase.OnEntityListItemTouchListener
     {
         override fun onClick(sender: EntityViewBase)
@@ -430,6 +433,9 @@ class MainActivity : AppCompatActivity()
                     entityListView.invalidate()
                 }
             }
-        }).connect()
+        }).connect {
+            Toast.makeText(this, R.string.msg_no_connection, Toast.LENGTH_LONG).show()
+            finish()
+        }
     }
 }
