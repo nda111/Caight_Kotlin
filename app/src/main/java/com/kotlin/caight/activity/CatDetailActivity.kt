@@ -187,7 +187,7 @@ class CatDetailActivity : AppCompatActivity(), IMutableActivity
                         runOnUiThread {
                             when (response)
                             {
-                                ResponseId.UPLOAD_WEIGHT_OK ->
+                                ResponseId.UPLOAD_WEIGHT_OK    ->
                                 {
                                     syncs.clear()
                                     Toast.makeText(this@CatDetailActivity, R.string.msg_upload_complete, Toast.LENGTH_SHORT).show()
@@ -215,7 +215,7 @@ class CatDetailActivity : AppCompatActivity(), IMutableActivity
 
                 when (sync.type)
                 {
-                    SyncData.SyncTypeInsert ->
+                    SyncData.SyncTypeInsert                          ->
                     {
                         cat!!.weights.remove(date)
                     }
@@ -264,7 +264,7 @@ class CatDetailActivity : AppCompatActivity(), IMutableActivity
                         val sync = syncs[longDate]
                         when (sync!!.type)
                         {
-                            SyncData.SyncTypeDelete                          ->
+                            SyncData.SyncTypeDelete ->
                             {
                                 if (sync.oldValue == weight)
                                 {
@@ -314,18 +314,21 @@ class CatDetailActivity : AppCompatActivity(), IMutableActivity
                                     }
                                     SyncData.SyncTypeDelete ->
                                     {
-                                    }                                }
+                                    }
+                                }
                             }
                             else
                             {
-                                syncs[longDate] = SyncData(SyncData.SyncTypeUpdate, longDate, weight, if (cat!!.hasWeightOn(newDate))
-                                {
-                                    cat!!.weights[newDate]!!
-                                }
-                                else
-                                {
-                                    -1F
-                                })
+                                syncs[longDate] = SyncData(
+                                    SyncData.SyncTypeUpdate, longDate, weight, if (cat!!.hasWeightOn(newDate))
+                                    {
+                                        cat!!.weights[newDate]!!
+                                    }
+                                    else
+                                    {
+                                        -1F
+                                    }
+                                )
                             }
 
                             cat!!.weights[newDate] = weight
@@ -460,14 +463,14 @@ class CatDetailActivity : AppCompatActivity(), IMutableActivity
         ageChip.text = ageBuilder.toString()
 
         // attribute chips
-        if (cat.attributes.isNotEmpty())
+        println(cat.attributes.size)
+        for (attr in cat.attributes)
         {
-            for (attr in cat.attributes)
-            {
-                val chip = createChip()
-                chip.text = attr
-                attrChipGroup!!.addView(chip)
-            }
+            println(attr)
+
+            val chip = createChip()
+            chip.text = attr
+            attrChipGroup!!.addView(chip)
         }
 
         //

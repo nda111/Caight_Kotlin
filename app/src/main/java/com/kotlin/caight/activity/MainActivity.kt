@@ -196,6 +196,7 @@ class MainActivity : AppCompatActivity()
             }
         }
     }
+    
     private val onCatEditListener: EntityViewBase.OnEntityListItemTouchListener = object : EntityViewBase.OnEntityListItemTouchListener
     {
         override fun onClick(sender: EntityViewBase)

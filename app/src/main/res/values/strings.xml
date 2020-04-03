@@ -50,10 +50,10 @@
     <string name="word_neutered">Neutered</string>
     <string name="word_spayed">Spayed</string>
 
-    <string name="desc_account">.</string>
-    <string name="desc_account_logout">.</string>
-    <string name="desc_account_reset_pw">.</string>
-    <string name="desc_account_delete_account">.</string>
+    <string name="desc_account">User name, Log out, Password</string>
+    <string name="desc_account_logout">Logout and go to login page.</string>
+    <string name="desc_account_reset_pw">Request an email to reset my password/</string>
+    <string name="desc_account_delete_account">Delete this account permanently.</string>
     <string name="desc_notifications">.</string>
     <string name="desc_create_group">Create a new group as a manager.</string>
     <string name="desc_join_group">Join an existing group as a member.</string>
@@ -113,7 +113,4 @@
     <string name="err_join_rejected">This is locked group. You can\'t join this group.</string>
     <string name="err_join_wrong_password">This is wrong password.</string>
     <string name="err_del_group">Group with multiple members cat not be deleted.</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

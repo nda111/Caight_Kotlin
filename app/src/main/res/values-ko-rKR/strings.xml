@@ -43,14 +43,13 @@
     <string name="menu_account">계정</string>
     <string name="menu_notifications">알림</string>
     <string name="attr_description">상세 설명</string>
-    <string name="desc_account">.</string>
+    <string name="desc_account">이름, 로그아웃, 비밀번호</string>
     <string name="desc_notifications">.</string>
     <string name="menu_account_logout">로그아웃</string>
     <string name="menu_account_reset_pw">비밀번호 변경</string>
     <string name="menu_account_delete_account">회원 탈퇴</string>
-    <string name="desc_account_logout">.</string>
-    <string name="desc_account_reset_pw">.</string>
-    <string name="desc_account_delete_account">.</string>
+    <string name="desc_account_logout">로그아웃합니다.</string>
+    <string name="desc_account_reset_pw">비밀번호를 초기화하기위한 이메일을 받습니다.</string>
     <string name="msg_forgot_password">비밀번호를 잊으셨나요?</string>
     <string name="msg_reset_mail_sent">비밀번호 변경 메일을 전송했습니다. &#10; 메일을 받지 못하셨다면 스팸 메일함을 확인해주세요.</string>
     <string name="warn_deletion">한 번 삭제하면 되돌릴 수 없습니다.</string>
@@ -96,5 +95,6 @@
     <string name="attr_keywords">키워드</string>
     <string name="desc_keyword">애옹이의 특징을 키워드로 적어보세요!&#10;공백으로 구분해주세요.</string>
     <string name="act_select">선택</string>
+    <string name="desc_account_delete_account">계정을 영구적으로 삭제합니다.</string>
     \
 </resources>

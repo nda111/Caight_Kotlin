@@ -26,7 +26,7 @@ class Cat
         get() = weights.size > 0
     val lastWeight: MutableMap.MutableEntry<Date, Float>?
         get() = weights.lastEntry()
-    var attributes: ArrayList<String> = ArrayList<String>(0)
+    var attributes: Array<String> = arrayOf()
         private set
 
     //
@@ -170,7 +170,7 @@ class Cat
             }
 
             val attributes = json.getJSONArray(JsonKeyAttributes)
-            val attrArray = ArrayList<String>(attributes.length())
+            val attrArray = Array(attributes.length()) { "" }
             for (i in attrArray.indices)
             {
                 attrArray[i] = attributes.getString(i)

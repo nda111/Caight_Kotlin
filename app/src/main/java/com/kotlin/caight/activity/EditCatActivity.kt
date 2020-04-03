@@ -41,6 +41,7 @@ class EditCatActivity : AppCompatActivity(), IMutableActivity, ColorPickerDialog
         private const val JsonKeyBirthday = "birthday"
         private const val JsonKeyGender = "gender"
         private const val JsonKeySpecies = "species"
+        private const val JsonKeyAttributes = "attributes"
     }
 
     private var cat: Cat? = null
@@ -48,6 +49,7 @@ class EditCatActivity : AppCompatActivity(), IMutableActivity, ColorPickerDialog
     private var selectedSpecies: Int = -1
     private var selectedColor: Int = -1
     private var selectedBirthday: Long = 0
+    private var prevAttrs: Array<String> = arrayOf()
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?)
@@ -141,6 +143,17 @@ class EditCatActivity : AppCompatActivity(), IMutableActivity, ColorPickerDialog
             ).show()
         }
 
+        // maleRadioButton, femaleRadioButton, neuteredCheckBox
+        if (cat!!.gender.isMale())
+        {
+            maleRadioButton.isChecked = true
+        }
+        else
+        {
+            femmaleRadioButton.isChecked = true
+        }
+        isNeuteredCheckBox.isChecked = cat!!.gender.isNeuteredOrSpayed()
+
         // speciesSpinner
         val species = StaticResources.StringArrays.getSpecies(this);
         val sortedSpecies = StaticResources.StringArrays.getSortedSpecies(this);
@@ -170,6 +183,10 @@ class EditCatActivity : AppCompatActivity(), IMutableActivity, ColorPickerDialog
         }
         selectedSpecies = Arrays.binarySearch(sortedSpecies, species[cat!!.species])
         speciesSpinner.setSelection(selectedSpecies)
+
+        // keywordEditText
+        prevAttrs = cat!!.attributes.copyOf()
+        keywordEditText.setText(prevAttrs.joinToString(" "))
 
         // saveButton
         saveButton.setOnClickListener {
@@ -206,6 +223,25 @@ class EditCatActivity : AppCompatActivity(), IMutableActivity, ColorPickerDialog
             {
                 anythingHasChanged = true
                 json.put(JsonKeySpecies, speciesId)
+            }
+            val attrString = keywordEditText.text.toString()
+            val attrs = attrString.split(" ")
+            if (attrs.size != prevAttrs.size)
+            {
+                anythingHasChanged = true
+                json.put(JsonKeyAttributes, attrString)
+            }
+            else
+            {
+                for (i in attrs.indices)
+                {
+                    if (prevAttrs[i] != attrs[i])
+                    {
+                        anythingHasChanged = true
+                        json.put(JsonKeyAttributes, attrString)
+                        break
+                    }
+                }
             }
 
             if (anythingHasChanged)
@@ -279,6 +315,7 @@ class EditCatActivity : AppCompatActivity(), IMutableActivity, ColorPickerDialog
         femmaleRadioButton.isEnabled = true
         isNeuteredCheckBox.isEnabled = true
         speciesSpinner.isEnabled = true
+        keywordEditText.isEnabled = true
         saveButton.isEnabled = true
         progressBar.visibility = View.GONE
     }
@@ -293,6 +330,7 @@ class EditCatActivity : AppCompatActivity(), IMutableActivity, ColorPickerDialog
         femmaleRadioButton.isEnabled = false
         isNeuteredCheckBox.isEnabled = false
         speciesSpinner.isEnabled = false
+        keywordEditText.isEnabled = false
         saveButton.isEnabled = false
         progressBar.visibility = View.VISIBLE
     }
